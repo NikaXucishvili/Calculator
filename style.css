@@ -1,0 +1,168 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: #081822;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+
+.check{
+    position: relative;
+    top: 30px;
+    right: 50px;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: #092c3e;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: ease-in 0.5s;
+}
+
+input[type="checkbox"]:checked ~ .check{
+    background: rgb(224, 219, 219);
+}
+
+.check::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+input[type="checkbox"]:checked ~ .check::before{
+    transform: translateX(-50px);
+}
+
+.check::after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #092c3e;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: translateX(50px);
+}
+
+input[type="checkbox"]:checked ~ .check::after{
+    transform: translateX(0px);
+}
+
+
+.calculator{
+    width: 300px;
+    height: 600px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    background: #eaf3fb; /*for black background #121e27*/
+    overflow: hidden;
+    z-index: 2;
+}
+
+.calculator.dark{
+    background-color: #121e27;
+}
+
+.calculator.dark form input{
+    color: #d9d9d9;
+    background: #132836;
+}
+
+.calculator.dark button{
+    border: 1px solid #23313e;
+    color: #298dd3;
+    background: #1f3141;
+}
+
+.calculator.dark .btn-equal{
+    background: #1991ff;  /* for black #1991ff white*/
+    color: white;
+}
+
+.calculator.dark .btn-clear{
+    background: #40505d; /* for black #40505d, #62717d*/
+    color: #62717d;
+}
+
+.calculator.dark .btn-blue{
+    background: #005db2; /* for black #005db2,  #2b92f2*/
+    color: #2b92f2;
+}
+
+form input{
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 12px;
+    font-size: 2rem;
+    padding: 1rem;
+    color: #60686e; /* for black #d9d9d9 */
+    background: #ebf3fb; /* for black #132836*/
+    text-align: right;
+    pointer-events: none;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+button{
+    flex: 0 0 22%;
+    margin: 10px 0;
+    width: 60px;
+    height: 52px;
+    font-size: 24px;
+    border: 1px solid #c6dceb; /* for black #23313e #298dd3*/
+    font-weight: 800;
+    border-radius: 15px;
+    cursor: pointer;
+    background: #c5dcee;  /* #1f3141 */
+    color: #e7f2fb;
+    transition: all 200ms ease;
+
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+.btn-equal{
+    background: #19acff;  /* for black #1991ff white*/
+    color: white;
+}
+
+.btn-clear{
+    background: #92c1e9; /* for black #40505d, #62717d*/
+    color: #62717d;
+}
+
+.btn-blue{
+    background: #005db2; /* for black #005db2,  #2b92f2*/
+    color: #2b92f2;
+}
+
+
